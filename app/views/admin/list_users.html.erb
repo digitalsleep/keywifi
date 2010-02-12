@@ -1,0 +1,7 @@
+ <div id="table">
+<%= render :partial => "users_list" %>
+</div>
+<br/>
+ <% form_tag({ :action => :getcsv })do %> <%= submit_tag 'Export To CSV' -%>
+
+    <% end -%>

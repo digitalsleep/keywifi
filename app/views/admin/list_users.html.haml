@@ -1,0 +1,17 @@
+%script{ :type => "text/javascript", :src => "/javascripts/protoype.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/effects.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/dragdrop.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/controls.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/application.js" }
+
+  = render :partial => 'search'
+
+%div#table
+  = render :partial => 'users_list'
+
+
+%br
+- form_tag(:action => :getcsv) do
+  =submit_tag 'Export To CSV'
+
+ 

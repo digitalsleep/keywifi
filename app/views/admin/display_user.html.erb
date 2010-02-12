@@ -1,0 +1,36 @@
+<h3> Display <%= @user.name%></h3>
+<br/> <br/> 
+<div id="partialLoadDiv">
+<p>
+	Name:<%= @user.name%>
+</p>
+<br/> <br/> 
+<p>
+Username:<%= @user.username%>
+</p>
+<br/> <br/> 
+<p>
+Address:<%= @user.address%>
+
+</p>
+<br/> <br/> 
+<p>
+	Neighbourhood:<%= @user.neighbourhood%>
+</p>
+<br/> <br/> 
+<p>
+	City:<%= @user.city%>
+</p>
+<br/> <br/> 
+<p>
+	State:<%= @user.state%>
+</p>
+<br/> <br/> 
+<p>
+	Zipcode:<%= @user.zipcode%>
+</p>
+</div>
+
+<br/>
+<br/>
+<%= link_to 'Back' ,:controller=>'admin',:action=>'list_users'%>

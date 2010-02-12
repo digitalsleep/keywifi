@@ -1,0 +1,84 @@
+%script{ :type => "text/javascript", :src => "/javascripts/protoype.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/effects.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/dragdrop.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/controls.js" }
+%script{ :type => "text/javascript", :src => "/javascripts/application.js" }
+
+- form_tag({:action => ""},{:name => "sform", :id=>"sform",:style => "display:inline;"}) do
+  Filter By
+  =select("user", "filter", @filter)   
+  =text_field_tag(:query, params['query'], :size => 10, :id => 'query') 
+  =image_tag("/images/spinner.gif",:align => "absmiddle",:border => 0,:id => "spinner",:style =>"display: none;" ,:query => params[:query] )
+  = observe_form 'sform',  :frequency => 1,:update => 'table',:before => "Element.show('spinner')",:success => "Element.hide('spinner')",:url => {:action => 'list'},:query => params[:query] 
+  
+#table
+  %table
+    %thead
+      %tr{ :style => "background-color:#d6d5d9" }
+        %td{:style=>"width:150px;"}
+          =sort_td_class_helper "name"
+          =sort_link_helper "Name","name"
+     
+    
+        %td{:style=>"width:15%"}
+          =sort_td_class_helper "username"
+          =sort_link_helper "Username","username" 
+      
+      
+        %td{:style=>"width:15%"}
+          =sort_td_class_helper "address"
+          =sort_link_helper "Address","address"
+      
+      
+        %td{:style=>"width:15%"}
+          =sort_td_class_helper "email"
+          = sort_link_helper "email", "email"
+
+
+        %td{:style=>"width:15%"}
+          =sort_td_class_helper "city"
+          = sort_link_helper "City", "city"
+
+
+        %td{:style=>"width:15%"}
+          = sort_td_class_helper "state"
+      
+          = sort_link_helper "State", "state"
+
+
+        %td{:style=>"width:15%"}
+          = sort_td_class_helper "zipcode"
+          = sort_link_helper "Zipcode", "zipcode"
+     
+        %td{:style=>"width:15%"}
+          = sort_td_class_helper "phone"
+          = sort_link_helper "Phone", "phone"
+      
+      
+    %tbody
+      - @search_results.each do |i|
+        %tr 
+          %td{ :width => "15%" }
+            = i.name
+    
+          %td{ :width => "15%" }
+            = i.username 
+       
+          %td{ :width => "15%" }
+            = i.address
+       
+          %td{ :width => "15%" }
+            = i.email 
+       
+          %td{ :width => "15%" }
+            = i.city 
+          %td{ :width => "15%" }
+            = i.state
+       
+          %td{ :width => "15%" }
+            = i.zipcode
+      
+          %td{ :width => "15%" }
+            = i.phone
+      
+     

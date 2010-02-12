@@ -1,0 +1,264 @@
+body { margin:0; padding:0; font:normal 100%/120% verdana, helvetica, sans-serif; 
+		background:#ECECEC; }
+
+/* Font size conversion table available at :
+	http://sureshjain.wordpress.com/2007/07/06/53/
+*/
+
+/* ##### GLOBAL CODE ###### */
+
+.noBorder { border-right:0 !important; }
+.noPadding { padding:0 !important; }
+.noPaddingRight { padding-right:0 !important; }
+.noPaddingLeft { padding-left:0 !important; }
+.marginTop30px { margin-top:30px; }
+
+.floatLeft { float:left; }
+.floatRight { float:right; }
+.list_user {float:right; padding-right: 20px;}
+
+.width230px { width:230px; }
+.width155px { width:155px; }
+
+em { color:#D60E43; }
+input, textarea { font-size:.875em; color:#262626; }
+label { color:#262626; }
+input, textarea { border:1px solid #92BEE7; background:#F6F6F6; padding:2px 3px; font-family:verdana, helvetica, sans-serif; ; }
+
+
+.testBorder { border:1px solid red; }
+
+.minHeight { height:400px; }
+
+.textIndent { text-indent:-10000px; }
+
+.blue { color:#1073C9; }
+.gray { color:#333; }
+
+body, html, div#wrapper, div#footerWrap {
+	/* height:100%; */
+      clear:both;
+}
+
+html { overflow-x:hidden; overflow-y:scroll; }
+
+h2 { font-size: 1.25em  }
+h3 { font-size: 1.25em  }
+h4 { font-size: 1em; }
+
+p { color:#262626; line-height:1.5em; }
+
+a { color:#267FD0; }
+a:link, a:visited { text-decoration:none; }
+a:active, a:hover { text-decoration:underline; }
+
+
+/* ##### TEMPLATE CODE ###### */
+
+div#wrapper { position:relative; margin:0 auto; width:1037px; }
+div#footerWrap { float:left; clear:both; position:relative; width:100%; min-width:100%; /*height:100%;*/  }
+div#pageWrap { float:left; clear:both; position:relative; width:100%; padding-bottom:25px;  }
+
+div#roundedCornerWrap { width:1037px; position:relative; margin:0 auto; clear:both; top:-8px; z-index:0;  }
+div#shadowRight { float:left; width:100%; background:url('/images/bg_shadow_right.png') right top repeat-y; }
+div#topBorder { float:left; clear:both; width:100%; padding-top:31px; background:url('/images/bg_page_top.gif') 0 -10px no-repeat; }
+div#rptBorder { float:left; clear:both; width:100%; background:url('/images/bg_page_rpt.gif') 0 0 repeat-y; }
+div#btmBorder { float:left; clear:both; width:100%; padding-bottom:50px; background:url('/images/bg_page_btm.gif') left bottom no-repeat;  }
+
+div#header { float:left; width:100%; clear:both; position:relative; height:85px;z-index:10;
+	background:url('/images/bg_header.png') 619px top no-repeat; }
+	div#header h1#logo { position:absolute; width:350px; height:100px; left:45px; top:15px; z-index:10;  }
+	div#header h1#logo a { float:left; width:350px; height:100px; text-indent:-10000px; 
+		background:url('/images/logo.png') 0 0 no-repeat; }
+		
+	div#header a.signUp { position:relative; float:right; width:442px; height:60px; text-indent:-10000px; top:20px; right:15px;
+		background:url('/images/a_sign_up.png') 0 0 no-repeat; }		
+		
+ul#menu { position:relative; width:370px; margin:0 auto; height:60px; text-align:center; }	
+	ul#menu li { display:inline; text-align:center; }
+	ul#menu li a { float:left; height:60px;  text-indent:-10000px; }
+	ul#menu li a.mission { width:187px; }
+	ul#menu li a.mission, ul#menu li a.mission:link { background:url('/images/bg_menu.gif') 0 0 no-repeat; }
+	ul#menu li a.mission:active, ul#menu li a.mission:hover, ul#menu li.active a.mission { background:url('/images/bg_menu.gif') 0 -60px no-repeat; }
+
+	ul#menu li a.about { width:181px; }
+	ul#menu li a.about, ul#menu li a.about:link { background:url('/images/bg_menu.gif') -187px 0 no-repeat; }
+	ul#menu li a.about:active, ul#menu li a.about:hover, ul#menu li.active a.about { background:url('/images/bg_menu.gif') -187px -60px no-repeat; }
+    
+	
+div#footer { float:left; clear:both; position:relative; height:107px; width:100%; min-width:100%; background:#fff; left:0; bottom:-25px; 
+	padding-top:35px; color:#535353;    }
+	div#footer div.footerWrap { position:relative; margin:0 auto; width:1000px;  }
+	div#footer ul.footer { display:block; color:#535353; font-size:.75em; }
+	div#footer ul.footer li { float:left; padding:0 15px; border-right:1px solid #535353; }
+	div#footer ul.footer li a { float:left; font-weight:bold; color:#535353; }
+	div#footer p.footer { display:block; font-size:.7em; clear:both; padding-top:15px; }
+	
+
+/* ##### HOME PAGE CODE ###### */					
+
+div#contentWrap { display:block; padding:15px 20px 0 16px; }		
+div.contentBg { float:left; width:100%; min-height:375px; background:url('/images/bg_content_home.gif') 0 0 repeat-x; }	
+div.contentContainer { float:left; display:block; position:relative; padding:0 60px; background:#fff; }
+
+div.contentContainer.home p { font-size:1em; }
+div.contentContainer.about p, div.contentContainer.about ul { font-size:.875em; color:#333; line-height:1.8em; }
+div.contentContainer.mission p { width:455px; font-size:1em; line-height:1.8em; color:#333;  }
+
+div.contentContainer.home div.homeMap { display:block; clear:both; width:872px; height:195px; }
+	div.contentContainer.home div.homeMap.placeholder { background:url('/images/bg_home_map.gif') 0 0 no-repeat; }
+	
+div.contentContainer.home h2.prelaunch { display:block; height:58px; width:872px; margin:18px 0 5px 0; background:url('/images/bg_hdr_pre_launch.gif') 0 0 no-repeat; }
+
+div.contentContainer.home a.watchVideo { position:absolute; right:68px; top:210px; width:265px; height:91px; z-index:100;
+	background:url('/images/bg_watch_video.png') 0 0 no-repeat; }
+
+div.contentContainer.home ul.details { display:block; margin-top:35px; }
+	div.contentContainer.home ul.details li { float:left; padding:12px 26px 0 58px;  }
+	div.contentContainer.home ul.details li.join { width:120px; background:url('/images/icon_join.gif') 0 0 no-repeat; }
+	div.contentContainer.home ul.details li.join strong { color:#006AC5; }
+	div.contentContainer.home ul.details li.supply { width:130px; background:url('/images/icon_supply.gif') 0 0 no-repeat; }
+	div.contentContainer.home ul.details li.supply strong { color:#46D514; }
+	div.contentContainer.home ul.details li.users { width:153px; background:url('/images/icon_users.gif') 0 0 no-repeat; }
+	div.contentContainer.home ul.details li.users strong { color:#D80045; }
+	div.contentContainer.home ul.details li.promote { width:165px; background:url('/images/icon_promote.gif') 0 0 no-repeat; }
+	div.contentContainer.home ul.details li.promote strong { color:#FF8A15; }
+	
+div#networkingWrap { display:block; padding:0px 0 0 22px; }
+	div#networkingWrap div.networkContent { float:left; width:auto; padding-right:43px;  }
+	div#networkingWrap div.networkContent.followUs { width:460px; }
+	div#networkingWrap div.networkContent h3 { padding-bottom:5px; }
+	div#networkingWrap div.networkContent h3.survey { width:194px; height:38px; background:url('/images/bg_hdr_take_survey.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent h3.follow { width:473px; height:38px; background:url('/images/bg_hdr_follow_us.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent h3.share{ width:195px; height:38px; background:url('/images/bg_hdr_share_this.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent p.share { background:url('/images/icon_share_this.png') 0 0 no-repeat; padding-left:58px; }
+	div#networkingWrap div.networkContent p a { font-weight:bold; }
+	
+	div#networkingWrap div.networkContent ul.networking { float:left; padding-right:23px; }
+	div#networkingWrap div.networkContent ul.networking li { float:left; padding-right:12px; }
+	div#networkingWrap div.networkContent ul.networking li a { float:left; text-indent:-10000px; }
+	div#networkingWrap div.networkContent ul.networking li a.facebook { width:41px; height:42px; 
+		background:url('/images/icon_facebook.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent ul.networking li a.twitter { width:43px; height:42px; 
+		background:url('/images/icon_twitter.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent ul.networking li a.linkedIn { width:43px; height:42px; 
+		background:url('/images/icon_linked_in.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent ul.networking li a.youTube { width:35px; height:42px; 
+		background:url('/images/icon_you_tube.png') 0 0 no-repeat; }
+	div#networkingWrap div.networkContent p.networking { float:right; width:238px; }
+
+div#lightBoxWrap { position:absolute; z-index:1000; height:130%; min-height:130%; width:100%; min-width:100%; left:0; top:0; background:url('/images/bg_light_box.png');  }	
+div#playLBbg { position:absolute; height:100%; height:130%; min-height:130%; width:200%; min-width:200%; opacity:.6; filter:alpha(opacity=60); background:#000; z-index:1000; }
+	div#videoPlayer { position:relative; margin:0 auto; top:264px; z-index:1000; width:650px; height:400px;  }
+	div#videoPlayer a.close { position:absolute; right:5px; top:-20px; width:64px; height:28px; text-indent:-10000px;
+		background:url('/images/a_close.png') 0 0 no-repeat; }
+
+
+/* ---- About Page ---- */
+
+div.bulletWrap { float:left; width:100%; clear:both; padding-bottom:20px; }
+	
+ul.aboutMenu { width:365px; line-height:1.5em; }	
+	ul.aboutMenu li { display:block; margin-bottom:12px; padding:0 0 0 14px; background:url('/images/bg_bullet.png') 0 9px no-repeat; }
+	
+h2.about { display:block; width:849px; height:56px; margin-bottom:25px; background:url('/images/bg_hdr_about.png') 0 0 no-repeat;  }	
+
+div.contentContainer.about h3, div.contentContainer.about h4 { line-height:2em; }
+	
+
+/* ---- Mission Page ---- */
+
+div.contentContainer.mission { background:url('/images/ph_mission.png') right 100px no-repeat; }
+h2.mission { display:block; width:838px; height:52px; margin:25px 0; background:url('/images/bg_hdr_mission.png') 0 0 no-repeat;  }	
+
+
+/* ---- Sign Up Page ---- */
+
+div.contentContainer.signUp { display:block; padding:0 0 0 55px; min-height:400px; width:855px; margin-top:-15px;
+	background:url('/images/icon_sign_up.png') 25px 0 no-repeat; }
+	
+div.contentContainer.signUp h2.userInfo { float:left; position:relative; clear:both; width:722px; height:49px; left:135px; margin-top:65px;
+	background:url('/images/bg_hdr_user_info.png') 0 0 no-repeat; }
+
+div.contentContainer.signUp h2.interested { float:left; position:relative; clear:both; width:722px; height:52px; left:135px; margin-top:65px;
+	background:url('/images/bg_hdr_interested.png') 0 0 no-repeat; }	
+	
+div.contentContainer.signUp h2.like { float:left; position:relative; clear:both; width:722px; height:55px; left:135px; margin-top:65px;
+	background:url('/images/bg_hdr_like.png') 0 0 no-repeat; }	
+	
+
+div.contentContainer.signUp fieldset { display:block; clear:both; width:100%; padding:20px 0 0 0; margin-bottom:-30px;  }
+div.contentContainer.signUp fieldset ul.form { width:420px; }
+div.contentContainer.signUp fieldset ul.form li { display:block; padding-bottom:23px; list-style:none; }
+div.contentContainer.signUp fieldset ul.form li label { float:left; width:148px; padding:3px 15px 0 0; text-align:right; font-size:.95em; }
+div.contentContainer.signUp fieldset ul.form li input.text { border:1px solid #92BEE7; background:#F6F6F6; padding:2px 3px; }
+div.contentContainer.signUp fieldset ul.form li p.desc { color:#666; font-size:.7em; padding-left:155px; }
+div.contentContainer.signUp fieldset ul.form li.state { height:20px; }
+div.contentContainer.signUp fieldset ul.form li select { float:left; }
+div.contentContainer.signUp fieldset ul.form li span { float:left;  }
+div.contentContainer.signUp fieldset ul.form li span label { width:auto; padding-right:0; font-size:.75em; padding-left:15px; }
+div.contentContainer.signUp fieldset p.required { font-size:.75em; padding:0 0 15px 150px; }
+
+div.contentContainer.signUp fieldset ul.form.inline { display:block; width:auto; padding-left:100px; }
+div.contentContainer.signUp fieldset ul.form.inline li { float:left; height:57px; padding:14px 45px 0 30px; }
+div.contentContainer.signUp fieldset ul.form.inline li label { float:left; position:relative; width:auto; top:-4px; font-size:1.2em;  }
+div.contentContainer.signUp fieldset ul.form.inline li.supplier { background:url('/images/icon_supplier.png') right top no-repeat; }
+div.contentContainer.signUp fieldset ul.form.inline li.user { background:url('/images/icon_user.png') right top no-repeat; }
+div.contentContainer.signUp fieldset ul.form.inline li.promoter { background:url('/images/icon_promoter.png') right top no-repeat; }
+div.contentContainer.signUp fieldset ul.form.inline input[type="checkbox"] { float:left; border:0; }
+
+div.contentContainer.signUp fieldset ul.form.inline.bottom { padding-left:130px; margin-bottom:30px; padding-bottom:60px }
+div.contentContainer.signUp fieldset ul.form.inline.bottom li { padding:0 100px 25px 0; height:auto; }
+div.contentContainer.signUp fieldset ul.form.inline.bottom li textarea { float:left; width:555px; height:65px; }
+div.contentContainer.signUp fieldset ul.form.inline.bottom li p.desc { color:#666; font-size:1em; clear:both; padding-left:22px; }
+div.contentContainer.signUp fieldset ul.form.inline.bottom li span { float:left; padding:0 20px 0 0; }
+div.contentContainer.signUp fieldset ul.form.inline.bottom li span label { padding:0; }
+
+div.contentContainer.signUp fieldset ul.form input.button { border:none !important; }
+
+.success {
+  border: 1px solid #FFCC66;
+  background-color: #FFFFCC;
+  font-size: 12px;
+  padding: 6px;
+}
+.notice {
+  border: 1px solid #FFCC66;
+  background-color: #FFFFCC;
+  font-size: 12px;
+  padding: 6px;
+}
+.error {
+  border: 1px solid #FFCC66;
+  background-color: #FBE3E4;
+  font-size: 12px;
+  padding: 6px;
+}
+
+.error,
+.notice,
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd;
+              margin-top: 1em; }
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+
+
+.errorExplanation {
+  border: 1px solid #FFCC66;
+  background-color: #FBE3E4;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+.errorExplanation h2 {
+  background: 0;
+  border: 0;
+  font-size: 1.2em;
+  margin-top: 0;
+  padding: 0;
+}
+div.contentContainer.signUp fieldset ul.form.inline li input{ float:left;}
+
+div.contentContainer.signUp fieldset ul.form.inline.bottom li .fieldWithErrors{ float:left;}
+div.contentContainer.signUp fieldset ul.form.inline li .fieldWithErrors{ float:left;}

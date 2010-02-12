@@ -1,0 +1,36 @@
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %title
+      KeyWifi.com
+    = stylesheet_link_tag "style"
+    = stylesheet_link_tag "reset"
+    
+    
+    %script{ :type => "text/javascript", :src => "/javascripts/prototype.js"}
+    %script{ :type => "text/javascript", :src => "/javascripts/controls.js"}
+    %script{ :type => "text/javascript", :src => "/javascripts/application.js"}
+    %script{ :type => "text/javascript", :src => "/javascripts/dragdrop.js"}
+    %script{ :type => "text/javascript", :src => "/javascripts/prototype.js"}
+     
+  %body
+    #footerWrap.clear
+      #wrapper.clear
+        #pageWrap.clear
+          = render :partial => 'layouts/header'
+          #roundedCornerWrap.clear
+            #topBorder
+              #btmBorder
+                #rptBorder
+                  #contentWrap
+                    .contentBg
+                      %ul#menu
+                        %li
+                          = link_to "Our Mission",{:controller =>'info',:action =>'mission'},:class =>'mission'
+                        %li
+                          = link_to "About Keywifi",{:controller =>'info',:action =>'about'},:class =>'about'
+                      - flash.each do |name, msg|
+                        = content_tag :p, msg, :class => "#{name}"
+                      = yield
+
+          = render :partial => 'layouts/footer'

@@ -1,0 +1,47 @@
+%h3
+  Display
+  = @user.name
+%br
+%br
+- temp=@user.photo.url 
+- url='http://59.144.131.196:4001' + temp
+= gravatar_for(@user,:default => "#{url}")
+%a{ :href => "http://en.gravatar.com/", :target => "_blank" }
+  Click here to Set or Update Your Avatar  
+#partialLoadDiv
+  %p
+    Name
+    = @user.name
+  %br
+  %br
+  %p
+    Username
+    = @user.username
+  %br
+  %br
+  %p
+    Address
+    = @user.address
+  %br
+  %br
+  %p
+    Email :
+    = @user.email
+  %br
+  %br
+  %p
+    City
+    = @user.city
+  %br
+  %br
+  %p
+    State
+    = @user.state
+  %br
+  %br
+  %p
+    Zipcode
+    = @user.zipcode
+%br
+%br
+= link_to 'Back' ,:controller=>'admin',:action=>'list_users'

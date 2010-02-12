@@ -1,0 +1,92 @@
+
+<form name="sform" id="sform" action="" style="display:inline;">
+<div style="margin-top:15px;">
+
+Filter By: <%= select("user", "filter", @filter)%>&nbsp;&nbsp;&nbsp;
+<%#= select "filter" "filter", , {:prompt => true}%>
+<%= text_field_tag(:query, params['query'], :size => 10, :id => 'query') %>
+</div>
+</form>
+
+<%= image_tag("/images/spinner.gif",
+              :align => "absmiddle",
+              :border => 0,
+              :id => "spinner",
+              :style =>"display: none;" ,
+                 :query => params[:query] ) %>
+</p>
+
+<%= observe_form 'sform',  :frequency => 1,
+         :update => 'table',
+         :before => "Element.show('spinner')",
+         :success => "Element.hide('spinner')",
+
+         :url => {:action => 'list'},
+        :query => params[:query]  %>
+
+
+
+<div id="table">
+
+<% if @total == 0 %>
+
+<p>No Users found...</p>
+
+<% else %>
+<%#= will_paginate @users%>
+<br/>   
+<%#= page_entries_info @users %>		
+
+<table>
+  <thead>
+  
+    <tr style="background-color:#d6d5d9">
+      <td width="15%"<%= sort_td_class_helper "name" %>>
+        <%= sort_link_helper "Name","name" %>
+      </td>&nbsp;&nbsp;&nbsp;
+      <td width="15%" <%= sort_td_class_helper "username" %>>
+        <%= sort_link_helper "Username","username" %>
+      </td>&nbsp;&nbsp;&nbsp;
+      <td width="15%" <%= sort_td_class_helper "address" %>>
+        <%= sort_link_helper "Address","address" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%" <%= sort_td_class_helper "email" %>>
+        <%= sort_link_helper "email", "email" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%"<%= sort_td_class_helper "city" %>>
+        <%= sort_link_helper "City", "city" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%" <%= sort_td_class_helper "state" %>>
+        <%= sort_link_helper "State", "state" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td  width="15%"<%= sort_td_class_helper "zipcode" %>>
+        <%= sort_link_helper "Zipcode", "zipcode" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%" <%= sort_td_class_helper "phone" %>>
+        <%= sort_link_helper "Phone", "phone" %>
+      </td>
+    
+    </tr>
+  </thead>
+  <tbody>
+   <% @users.each do |i| %>
+    <tr class="<%= cycle("even","odd") %>">
+      <td width="15%"><%= i.name %></td>&nbsp;&nbsp;&nbsp;
+	   <td  width="15%"><%= i.username %></td>&nbsp;&nbsp;&nbsp;
+      <td  width="15%"><%= i.address %></td>&nbsp;&nbsp;&nbsp;
+	    <td  width="15%"><%= i.email %></td>&nbsp;&nbsp;&nbsp;
+    
+      <td  width="15%"><%= i.city %></td>&nbsp;&nbsp;&nbsp;
+	    <td  width="15%"><%= i.state%></td>&nbsp;&nbsp;&nbsp;
+		  <td  width="15%"><%= i.zipcode%></td>&nbsp;&nbsp;&nbsp;
+		    <td  width="15%"><%= i.phone%></td>
+      &nbsp;&nbsp;&nbsp;
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%#= render :partial => "users_list" %>
+</div>
+<% end %>
+
+ 

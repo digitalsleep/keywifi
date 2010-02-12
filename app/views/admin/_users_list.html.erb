@@ -1,0 +1,69 @@
+
+
+
+
+ <%= javascript_include_tag :defaults %>
+<% if @total == 0 %>
+
+<p>No Users found...</p>
+
+<% else %>
+
+
+
+<%#= will_paginate @users%>
+<br/>   
+<%#= page_entries_info @users %>		
+
+<table>
+  <thead>
+  
+    <tr style="background-color:#d6d5d9">
+      <td width="15%"<%= sort_td_class_helper "name" %>>
+        <%= sort_link_helper "Name","name" %>
+      </td>&nbsp;&nbsp;&nbsp;
+      <td width="15%" <%= sort_td_class_helper "username" %>>
+        <%= sort_link_helper "Username","username" %>
+      </td>&nbsp;&nbsp;&nbsp;
+      <td width="15%" <%= sort_td_class_helper "address" %>>
+        <%= sort_link_helper "Address","address" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%" <%= sort_td_class_helper "email" %>>
+        <%= sort_link_helper "email", "email" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%"<%= sort_td_class_helper "city" %>>
+        <%= sort_link_helper "City", "city" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%" <%= sort_td_class_helper "state" %>>
+        <%= sort_link_helper "State", "state" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td  width="15%"<%= sort_td_class_helper "zipcode" %>>
+        <%= sort_link_helper "Zipcode", "zipcode" %>
+      </td>&nbsp;&nbsp;&nbsp;
+	   <td width="15%" <%= sort_td_class_helper "phone" %>>
+        <%= sort_link_helper "Phone", "phone" %>
+      </td>
+    
+    </tr>
+  </thead>
+  <tbody>
+   <% @users.each do |i| %>
+    <tr class="<%= cycle("even","odd") %>">
+      <td width="15%"><%= link_to i.name,:controller=>'admin',:action=>'display_user',:id=>i.id %></td>&nbsp;&nbsp;&nbsp;
+	   <td  width="15%"><%= i.username %></td>&nbsp;&nbsp;&nbsp;
+      <td  width="15%"><%= i.address %></td>&nbsp;&nbsp;&nbsp;
+	    <td  width="15%"><%= i.email %></td>&nbsp;&nbsp;&nbsp;
+    
+      <td  width="15%"><%= i.city %></td>&nbsp;&nbsp;&nbsp;
+	    <td  width="15%"><%= i.state%></td>&nbsp;&nbsp;&nbsp;
+		  <td  width="15%"><%= i.zipcode%></td>&nbsp;&nbsp;&nbsp;
+		    <td  width="15%"><%= i.phone%></td>
+      &nbsp;&nbsp;&nbsp;
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+ 

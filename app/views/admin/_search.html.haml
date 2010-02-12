@@ -1,0 +1,10 @@
+
+%script{ :type => "text/javascript", :src => "/javascripts/protoype.js" }
+%h2
+  Search  
+-form_tag(:controller=>'admin',:action=>'search', :method => :get,:id => "frmSearch") do
+  %fieldset
+    =text_field_tag :q, h(params[:q]), :id => "txtSearch", :class => "txt",:maxlength => 50
+    = submit_tag "Search", :name => nil, :id => "btnSearch",:class => "button" 
+  
+

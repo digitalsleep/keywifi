@@ -1,0 +1,8 @@
+%table{ :style => "margin-left: 40px;" }
+  - @users.each do |user|
+    %tr
+      %td
+        = user.name
+        
+%br
+= link_to 'New user', new_user_path 

@@ -1,0 +1,38 @@
+%h2
+  %span.fn.n
+    = @user.name 
+  's Profile
+.button_container
+  .clear
+.toolbox{ :style => "margin-left: 40px;" }
+  - temp=@user.photo.url 
+  - url='http://59.144.131.196:4001' + temp
+  = gravatar_for(@user,:default => "#{url}")
+  %a{ :href => "http://en.gravatar.com/", :target => "_blank" }
+    Click here to Set or Update Your Avatar
+  %li
+    %span
+      Name:
+      =@user.username
+  %li
+    %span
+      Address:
+      = @user.address
+  %li
+    %span
+      City:
+      = @user.city
+  %li
+    %span
+      State:
+      = @user.state
+  %li
+    %span
+      Zip Code:
+      = @user.zipcode
+  %li
+    %span
+      Email address :
+      = @user.email
+  = link_to 'Edit', edit_user_path(@user)  |
+  = link_to 'Back', users_path 

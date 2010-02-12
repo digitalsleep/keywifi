@@ -1,0 +1,167 @@
+:javascript
+  function imageLoad(val) {
+  if(navigator.appName == "Netscape") {
+  document.getElementById('preview_image').src = document.getElementById('user_photo').files[0].getAsDataURL();
+  } else {
+  document.getElementById('preview_image').src = document.getElementById('user_photo').value;
+  }
+  }
+  function NotNow () {
+  if (document.getElementById('user_photo').value != "")  {
+  document.getElementById('user_photo').value = "";
+  document.getElementById('preview_image').src='/images/profile_img.jpg'
+  }
+  }
+.contentContainer.signup
+  - form_for(@user,:html=>{:multipart=>true}) do |f|
+    %h2.userInfo.textIndent
+      User Information
+    %fieldset
+      = error_messages_for :user
+      %p.required
+        %em
+          *
+        Indicates a required field.
+      %ul.form.floatLeft
+        %li
+          %label{ :for => "name" }
+            %em
+              *
+            Name
+          = f.text_field 'name', :class=>"text width230px", :tabindex => 1
+        %li
+          %label{ :for => "address" }
+            %em
+              *
+            Address
+          = f.text_field 'address', :class=>"text width230px", :tabindex => 2
+        %li
+          %label{ :for => "neighborhood" }
+            Neighborhood
+          = f.text_field 'neighbourhood', :class=>"text width230px", :tabindex => 3
+        %li
+          %label{ :for => "city" }
+            %em
+              *
+            City
+          = f.text_field 'city', :class=>"text width230px", :tabindex => 4
+        %li.state
+          %label{ :for => "state" }
+            %em
+              *
+            State
+          =collection_select('user','state',States.find(:all),:name,:abbreviation,{:prompt=>'Please select' },{:id =>"state",:tabindex => 5})
+          %span
+            %label{ :for => "not_US" }
+              Not in U.S.
+            %input#not_US{ :type => "checkbox", :alt => "Are you not in the U.S.?" }
+        %li
+          %label{ :for => "zip" }
+            %em
+              *
+            Zip/Postal Code
+          = f.text_field 'zipcode', :class=>"text width155px", :tabindex => 6
+        %li
+          %label{ :for => "email" }
+            %em
+              *
+            Email Address
+          = f.text_field 'email', :class=>"text width230px", :tabindex => 7
+        %li
+          %label{ :for => "phone" }
+            %em
+              *
+            Contact Phone #
+          = f.text_field 'phone', :class=>"text width155px", :tabindex => 8
+          %p.desc
+            Skype ID accepted.
+    
+      %ul.form.floatRight
+        %li
+          %label{ :for => "username" }
+            %em
+              *
+            User Name
+          = f.text_field 'username', :class=>"text width230px", :tabindex => 9
+        %li
+          %label{ :for => "password" }
+            %em
+              *
+            Password
+          = f.password_field 'password', :class=>"text width230px", :tabindex => 10
+          %p.desc
+            Must be at least five characters.
+        %li
+          %label{ :for => "confirm_password" }
+            %em
+              *
+            Confirm Password
+          = f.password_field :password_confirmation,:class=>"text width230px", :tabindex => 11
+        %li
+          %label{ :for => "avatar" }
+            Gravatar
+          %img#preview_image{ :src => "/images/profile_img.jpg", :height => "96", :width => "96" }
+        %li
+          %label{ :for => "avatar" }
+          %span
+            %small
+              Not now I'll add one later
+            %input#profile_chbx{ :type => "checkbox", :onchange => "NotNow();" }  
+          
+        %li
+          %label{ :for => "avatar" }
+          
+          = f.file_field :photo,:size => '15',:class =>'text width230px', :tabindex => 12,:onchange =>"imageLoad(this.value);"
+    %h2.interested.textIndent
+      I'm interested in becoming a...
+    %fieldset
+      %ul.form.inline
+        %li.supplier
+          = f.radio_button 'user_type', 'supplier'
+          %label{ :for => "supplier" }
+            Supplier
+        %li.user
+          = f.radio_button 'user_type', 'user'
+          %label{ :for => "user" }
+            User
+        %li.promoter
+          = f.radio_button 'user_type', 'promoter'
+          %label{ :for => "promoter" }
+            Promoter
+        %li
+          = f.radio_button 'user_type', 'All there'
+          %label{ :for => "all" }
+            All three
+    %h2.like.textIndent
+      I'm interested in becoming a...
+    %fieldset
+      %ul.form.inline.bottom
+        %li
+          = f.radio_button 'user_to_do','Beat test it'
+          %label{ :for => "beta_test" }
+            Beta test it
+          %p.desc
+            with benefits
+        %li
+          =  f.radio_button 'user_to_do','Try it'
+          %label{ :for => "try_it" }
+            Try it
+          %p.desc
+            after it launches
+        %li.noPaddingRight
+          =  f.radio_button 'user_to_do','Watch it develop'
+          %label{ :for => "develop" }
+            Watch it develop
+          %p.desc
+            receive email newsletter
+        %li.noPaddingRight
+          %span
+            =  f.radio_button 'user_to_do','Other'
+            %label{ :for => "other" }
+              Other
+            %p.desc.other
+              please specify
+
+          %textarea{ :alt => "Please specify" }
+        %li
+          = image_submit_tag("/images/button_sign_up.png",{:class => 'button',:tabindex => 7})
